@@ -15,11 +15,11 @@ const exampleForm = { class_id: "CSCI-1000",
                level: "upper", 
                time: ["9:00"], 
                pathway: "Digital Literacy", 
-               term: "fall2022" 
+               term: "fall2023" 
               };
 const CreateClasses = ( {user}: CreateClassProps ) => {
   const handleSubmitForm = async (form) => {
-    window.console.log(form);
+    console.log(form);
     //The form object will be sent to the backend, the backend should be able to handle the request and return a list of classes
     //This function will be used to send the post request to the backend to receive a list of classess object that will be passed into the tabular object of classes
     const userRef = doc(getFirestore(), "users", user.uid)

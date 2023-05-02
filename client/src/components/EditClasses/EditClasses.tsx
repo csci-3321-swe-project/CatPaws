@@ -1,8 +1,9 @@
 import React from 'react'
-import { Component, useState } from "react";
+import { Component, useState, useEffect } from "react";
 import { db, auth } from "../../firebase";
-import { collection, doc, getDoc, getDocs, query, where } from "firebase/firestore/lite";
+import { collection, doc, getDoc, getDocs, query, where, getFirestore } from "firebase/firestore/lite";
 import BasicRTable from '../Register/BasicRTable';
+import { getCurSemester } from "../../utils";
 
 type EditClassesProps = {
   user: User
@@ -11,8 +12,33 @@ type EditClassesProps = {
 
 const EditClasses = ({user}: EditClassesProps) => {
 
-  const [teachingClasses, setTeachingClasses] = useState<Class[]>([]);
-  //to do fetch classes from database
+  const [curSem, setSem] = useState("fall");
+  useEffect(() => {
+    const fetchSemester = async () => {
+      const curSemester = await getCurSemester();
+      setSem(curSemester);
+    };
+    fetchSemester();
+  }, []);
+
+  const [teachingClasses, setTeachingClasses] = useState<any[]>([]);
+  useEffect(() => {
+    const fetchTeachingClasses = async () => {
+      if (user) {
+        var ret = [] as any[]
+        const userRef = doc(getFirestore(), "users", user.uid)
+        const q = query(collection(getFirestore(), curSem), where("instructor", "==", userRef))
+        const querySnapshot = await getDocs(q)
+        querySnapshot.forEach((doc) => {
+          ret.push(doc.data())
+        });
+        setTeachingClasses(ret)
+      }
+    };
+    fetchTeachingClasses();
+  }, []);
+  console.log(teachingClasses)
+
   return (
     <div>
       <div className="register_container">
@@ -23,7 +49,6 @@ const EditClasses = ({user}: EditClassesProps) => {
         <div className="register-container-button">
           <button>Delete class</button>
         </div>
-
       </div>
     </div>
   )
