@@ -18,3 +18,4 @@
 - Navigate to the directory by running `cd cspace-firebase`
 - Replace `cspace-51bd2` in the `.firebaserc` file with your firebase project file ID if you are not using the pre-configured Firebase project
 - Run `npm run deploy` to deploy Firebase project
+
