@@ -7,16 +7,17 @@ type CreateClassProps = {
   user: User;
 };
 
-const exampleForm = { class_id: "CSCI-1000", 
-               credits: "3",
-               name: "fake comp sci",
-               location: "Classroom 1",
-               subject: "Computer Science", 
-               level: "upper", 
-               time: ["9:00"], 
-               pathway: "Digital Literacy", 
-               term: "fall2023" 
-              };
+const exampleForm = { 
+  class_id: "CSCI-1000", 
+  credits: "3",
+  name: "fake comp sci",
+  location: "Classroom 1",
+  subject: "Computer Science", 
+  level: "upper", 
+  time: ["9:00"], 
+  pathway: "Digital Literacy", 
+  term: "fall2023" 
+};
 const CreateClasses = ( {user}: CreateClassProps ) => {
   const handleSubmitForm = async (form) => {
     console.log(form);
