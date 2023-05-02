@@ -36,7 +36,7 @@ const CreateClasses = ( {user}: CreateClassProps ) => {
       </div>
       <div className="dropdown-container">
         <div className="dropdown-container-button">
-          <button onClick={() => handleSubmitForm(exampleForm)}>Create</button>
+          <button onClick={() => handleSubmitForm(exampleForm)}>Create Example Class</button>
         </div>
       </div>
     </div>
