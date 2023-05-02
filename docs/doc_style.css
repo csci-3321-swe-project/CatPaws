@@ -89,7 +89,6 @@
     align-self: center;
     font-weight: bold;
     padding: 15px 0;
-<<<<<<< HEAD:docs/documentation_website/doc_style.css
     color: white;
 }
 .chart-lines{
@@ -173,6 +172,4 @@ ul .chart-li-nine{
 ul .chart-li-ten{
     grid-column: 9/10;
     background-color: #d16ac3;
-=======
->>>>>>> 81fb15f70fe258cea5be733b4ed6de5db6fb5b17:docs/doc_style.css
 }
