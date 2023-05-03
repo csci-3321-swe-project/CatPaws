@@ -26,6 +26,92 @@
         <p class="words">
             Firebase - Authorization, database management, and administration 
         </p>
-  
+        <h3 class="subtitle"> Setting Up</h3>
+        <p class="words">
+            First, you have to create a firebase project and enable the following services:
+            Authentication: Email/Password, Google
+            Firestore
+            If you want to host the application on firebase, you also need to enable:
+
+            Hosting
+        </p>
+        <h3 class="subtitle">Hosting with Your Own Server</h3>
+        <p class="words">
+            Open a terminal in the server environment you wish to use
+        </p>
+        <p class="words">
+            Install node.js on your server if you haven't already.
+        </p>
+        <p class="words">    
+            Clone the repository to your server, i.e. git clone https://github.com/QLe13/CatPaws.git
+        </p>
+        <p class="words"> 
+            Navigate to the root directory of the project, i.e. cd CatPaws
+        </p>
+        <p class="words">
+            Navigate to the 'client' directory of the project, i.e. cd client
+        </p>
+        <p class="words">
+            Run npm install to install dependencies.
+        </p>
+        <p class="words">
+            Run npm build to build the production application.
+        </p>
+        <p class="words">
+            Use a static server of your choice to serve the application
+        </p>
+        <p class="words">
+            For example, to serve with with npm serve on port 8580 with HTTPS:
+        </p>
+        <p class="words">    
+            npm install -g serve
+        </p>
+        <p class="words">
+            serve -s dist --listen 8580 --ssl-cert "/etc/ssl/certs/mycert.crt" --ssl-key "/etc/ssl/private/mykey.key"        
+        </p>
+        <h3 class="subtitle">Host with Firebase</h3>
+        <p class="words">
+            Install node.js if you haven't already.
+        </p>
+        <p class="words">
+            Run npm install in the root directory of the project
+        </p>
+        <p class="words">
+            Run npm install -g firebase-tools to install the firebase client.
+        </p>
+        <p class="words">
+            Run firebase login to login to firebase.
+        </p>
+        <p class="words">
+            Navigate to the cspace-firebase directory, i.e. cd cspace-firebase
+        </p>
+        <p class="words">
+            Replace cspace-51bd4 in the .firebaserc file with your firebase project id.
+        </p>
+        <p class="words">
+            Run npm run deploy to deploy firebase project.
+        </p>
+        <h3 class="subtitle">Developing for Institution or Organization</h3>
+        <p class="words">
+            If you are developing this project for your own institution or organization, follow the same steps as above to setup your own firebase project.
+            If you are developing this project to make public upstream changes, you may use the pre-configured firebase project to test your changes. Please contact the project owner for necessary access to the firebase project. Once any changes are merged into the main branch, your changes will be in the next firebase deployment.
+        </p>
+        <h3 class="subtitle">Develop UI & Client</h3>
+        <p class="words">
+            Install node.js if you haven't already.
+            Clone this repository and navigate to the root directory of the project.
+            Navigate to the 'client' directory of the project, i.e. cd client
+            Run npm install to install dependencies.
+            Run npm run dev to start a local hot-reload development server.
+        </p>
+        <h3 class="subtitle">Deploy to Firebase</h3>
+        <p class="words">
+            Run npm install in the root directory of the project
+            Run npm install -g firebase-tools to install the firebase client.
+            Run firebase login to login to firebase.
+            Navigate to the cspace-firebase directory, i.e. cd cspace-firebase
+            Replace cspace-51bd4 in the .firebaserc file with your firebase project id if you are not using the pre-configured firebase project.
+            Run npm run deploy to deploy firebase project.
+        </p>
     </body>
 </HTML>
